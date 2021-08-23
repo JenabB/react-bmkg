@@ -16,20 +16,36 @@ export default function Navigation() {
           <Route path="/about" component={About} />
         </Switch>
 
-        <ul className="bg-blue-900 bottom-0 fixed flex justify-evenly text-white w-full p-4">
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/weather">Weather</Link>
-          </li>
-          <li>
-            <Link to="/felt">Felt</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-        </ul>
+        <div className="bg-blue-900 bottom-0 fixed flex justify-evenly text-white w-full p-2">
+          <div>
+            <Link to="/" className="text-center">
+              <h1 className="material-icons md-24 flex justify-center">home</h1>
+              <h1>Home</h1>
+            </Link>
+          </div>
+          <div>
+            <Link to="/weather">
+              <h1 className="material-icons md-24 flex justify-center">
+                cloud
+              </h1>
+              <h1>Weather</h1>
+            </Link>
+          </div>
+          <div>
+            <Link to="/felt">
+              <h1 className="material-icons md-24 flex justify-center">
+                online_prediction
+              </h1>
+              <h1>Felt</h1>
+            </Link>
+          </div>
+          <div>
+            <Link to="/about">
+              <h1 className="material-icons md-24 flex justify-center">info</h1>
+              <h1>About</h1>
+            </Link>
+          </div>
+        </div>
       </div>
     </Router>
   );
