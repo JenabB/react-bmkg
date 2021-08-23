@@ -1,20 +1,22 @@
 import React, { useState, useEffect } from "react";
 import moment from "moment";
 
-const Felt = () => {
+const FeltM5 = () => {
   const [felt, setFelt] = useState(null);
 
   useEffect(() => {
-    fetch("https://data.bmkg.go.id/DataMKG/TEWS/gempadirasakan.json")
+    fetch("https://data.bmkg.go.id/DataMKG/TEWS/gempaterkini.json")
       .then((response) => response.json())
       .then((data) => setFelt(data.Infogempa.gempa))
       .catch((error) => console.log(error));
   }, []);
 
+  console.log(felt);
+
   return (
-    <div className="pb-20">
+    <div>
       <header className="bg-blue-800 text-white text-center p-4 font-bold">
-        <h1>Felt</h1>
+        <h1>Felt Magnitude 5+</h1>
       </header>
       {felt ? (
         <div className="grid lg:grid-cols-2 lg:w-2/4 mx-auto">
@@ -35,4 +37,4 @@ const Felt = () => {
   );
 };
 
-export default Felt;
+export default FeltM5;

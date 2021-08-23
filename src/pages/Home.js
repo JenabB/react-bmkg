@@ -15,55 +15,61 @@ const Home = () => {
 
   return (
     <div className="pb-20 text-center">
-      {earthquake ? (
-        <div>
-          <div className="flex justify-center">
-            <img
-              src={`https://data.bmkg.go.id/DataMKG/TEWS/
-${earthquake.Shakemap}`}
-              alt="shakemap"
-            />
-          </div>
-          <div className="shadow-lg p-4 lg:w-2/4 mx-auto">
-            <h1 className="text-xs">
-              {moment(earthquake.DateTime).format(
-                "dddd, MMMM Do YYYY, h:mm:ss a"
-              )}
-            </h1>
-            <h1>{earthquake.Wilayah}</h1>
-            <div
-              className="bg-blue-700 text-white mx-auto p-7 rounded-full my-10"
-              style={{ width: "80px", height: "80px" }}
-            >
-              {earthquake.Magnitude}
-            </div>
-            <div className="grid grid-cols-2">
-              <div className="shadow-lg m-2 p-2 rounded-lg">
-                <h1 className="text-blue-600 font-bold">Location</h1>
-                <h1>
-                  {earthquake.Bujur}, {earthquake.Lintang}
-                </h1>
-              </div>
-              <div className="shadow-lg m-2 p-2 rounded-lg">
-                <h1 className="text-blue-600 font-bold">Depth</h1>
-                <h1>{earthquake.Kedalaman}</h1>
-              </div>
-              <div className="shadow-lg m-2 p-2 rounded-lg">
-                <h1 className="text-blue-600 font-bold">Date</h1>
-                <h1>{earthquake.Tanggal}</h1>
-              </div>
-              <div className="shadow-lg m-2 p-2 rounded-lg">
-                <h1 className="text-blue-600 font-bold">Depth</h1>
-                <h1>{earthquake.Kedalaman}</h1>
-              </div>
-            </div>
+      <header className="bg-blue-800 text-white text-center p-4 font-bold">
+        <h1>Earthquake</h1>
+      </header>
 
-            <p className="my-4">{earthquake.Potensi}</p>
+      <main>
+        {earthquake ? (
+          <div>
+            <div className="flex justify-center">
+              <img
+                src={`https://data.bmkg.go.id/DataMKG/TEWS/
+${earthquake.Shakemap}`}
+                alt="shakemap"
+              />
+            </div>
+            <div className="shadow-lg p-4 lg:w-2/4 mx-auto">
+              <h1 className="text-xs">
+                {moment(earthquake.DateTime).format(
+                  "dddd, MMMM Do YYYY, h:mm:ss a"
+                )}
+              </h1>
+              <h1>{earthquake.Wilayah}</h1>
+              <div
+                className="bg-blue-700 text-white mx-auto p-7 rounded-full my-10"
+                style={{ width: "80px", height: "80px" }}
+              >
+                {earthquake.Magnitude}
+              </div>
+              <div className="grid grid-cols-2">
+                <div className="shadow-lg m-2 p-2 rounded-lg">
+                  <h1 className="text-blue-600 font-bold">Location</h1>
+                  <h1>
+                    {earthquake.Bujur}, {earthquake.Lintang}
+                  </h1>
+                </div>
+                <div className="shadow-lg m-2 p-2 rounded-lg">
+                  <h1 className="text-blue-600 font-bold">Depth</h1>
+                  <h1>{earthquake.Kedalaman}</h1>
+                </div>
+                <div className="shadow-lg m-2 p-2 rounded-lg">
+                  <h1 className="text-blue-600 font-bold">Date</h1>
+                  <h1>{earthquake.Tanggal}</h1>
+                </div>
+                <div className="shadow-lg m-2 p-2 rounded-lg">
+                  <h1 className="text-blue-600 font-bold">Depth</h1>
+                  <h1>{earthquake.Kedalaman}</h1>
+                </div>
+              </div>
+
+              <p className="my-4">{earthquake.Potensi}</p>
+            </div>
           </div>
-        </div>
-      ) : (
-        <h1>Loading...</h1>
-      )}
+        ) : (
+          <h1>Loading...</h1>
+        )}
+      </main>
     </div>
   );
 };
