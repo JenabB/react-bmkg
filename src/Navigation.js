@@ -11,37 +11,36 @@ export default function Navigation() {
       <div>
         <Switch>
           <Route exact path="/" component={Home} />
-
           <Route path="/dibawah5" component={Dibawah5} />
           <Route path="/diatas5" component={Diatas5} />
           <Route path="/tentang" component={About} />
         </Switch>
 
         <div className="bg-blue-900 rounded-t-3xl bottom-0 fixed flex lg:justify-center justify-evenly text-white w-full p-2">
-          <div className="mx-4">
+          <div className="mx-2">
             <Link to="/" className="text-center">
               <h1 className="material-icons md-24 flex justify-center">home</h1>
               <h1>Home</h1>
             </Link>
           </div>
 
-          <div className="mx-4">
+          <div className="mx-2">
             <Link to="/dibawah5">
               <h1 className="material-icons md-24 flex justify-center">
                 online_prediction
               </h1>
-              <h1> &lt;5</h1>
+              <h1> &lt;5 M</h1>
             </Link>
           </div>
-          <div className="mx-4">
+          <div className="mx-2">
             <Link to="/diatas5">
               <h1 className="material-icons md-24 flex justify-center">
                 sensors
               </h1>
-              <h1> &gt;5</h1>
+              <h1>&gt;5 M</h1>
             </Link>
           </div>
-          <div className="mx-4">
+          <div className="mx-2">
             <Link to="/tentang">
               <h1 className="material-icons md-24 flex justify-center">info</h1>
               <h1>Tentang</h1>
