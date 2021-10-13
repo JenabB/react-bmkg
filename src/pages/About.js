@@ -1,5 +1,6 @@
 import React from "react";
 import AppBar from "../components/AppBar";
+import { motion } from "framer-motion";
 import Deskripsi from "../components/Tentang/Deskripsi";
 import Kontributor from "../components/Tentang/Kontributor";
 
@@ -28,10 +29,27 @@ const About = () => {
   return (
     <div>
       <AppBar title="Tentang" />
-      <main className="p-4">
+      <motion.main
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: {
+            scale: 0.8,
+            opacity: 0,
+          },
+          visible: {
+            scale: 1,
+            opacity: 1,
+            transition: {
+              delay: 0.9,
+            },
+          },
+        }}
+        className="p-4"
+      >
         <Deskripsi />
         <Kontributor kontributor={kontributor} />
-      </main>
+      </motion.main>
     </div>
   );
 };

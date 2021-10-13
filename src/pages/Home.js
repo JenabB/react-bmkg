@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getGempaTerkini } from "../data/api";
+import { motion } from "framer-motion";
 import DetailInfo from "../components/Home/DetailInfo";
 import Magnitudo from "../components/Home/Magnitudo";
 import Header from "../components/Home/Header";
@@ -18,7 +19,23 @@ const Home = () => {
     <div className="pb-20 text-center">
       <AppBar title="Gempa Terkini" />
 
-      <main>
+      <motion.main
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: {
+            scale: 0.8,
+            opacity: 0,
+          },
+          visible: {
+            scale: 1,
+            opacity: 1,
+            transition: {
+              delay: 0.9,
+            },
+          },
+        }}
+      >
         {data ? (
           <div>
             <div className="shadow-lg p-4 lg:w-2/4 mx-auto">
@@ -33,7 +50,7 @@ const Home = () => {
         ) : (
           <h1>Loading...</h1>
         )}
-      </main>
+      </motion.main>
     </div>
   );
 };
