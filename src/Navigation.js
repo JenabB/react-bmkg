@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import About from "./pages/About";
-import Felt from "./pages/Felt";
-import FeltM5 from "./pages/FeltM5";
+import Dibawah5 from "./pages/Dibawah5";
+import Diatas5 from "./pages/Diatas5";
 import Home from "./pages/Home";
 
 export default function Navigation() {
@@ -12,9 +12,9 @@ export default function Navigation() {
         <Switch>
           <Route exact path="/" component={Home} />
 
-          <Route path="/felt" component={Felt} />
-          <Route path="/feltm5" component={FeltM5} />
-          <Route path="/about" component={About} />
+          <Route path="/dibawah5" component={Dibawah5} />
+          <Route path="/diatas5" component={Diatas5} />
+          <Route path="/tentang" component={About} />
         </Switch>
 
         <div className="bg-blue-900 rounded-t-3xl bottom-0 fixed flex lg:justify-center justify-evenly text-white w-full p-2">
@@ -26,23 +26,23 @@ export default function Navigation() {
           </div>
 
           <div className="mx-4">
-            <Link to="/felt">
+            <Link to="/dibawah5">
               <h1 className="material-icons md-24 flex justify-center">
                 online_prediction
               </h1>
-              <h1>Felt</h1>
+              <h1> &lt;5</h1>
             </Link>
           </div>
           <div className="mx-4">
-            <Link to="/feltm5">
+            <Link to="/diatas5">
               <h1 className="material-icons md-24 flex justify-center">
                 sensors
               </h1>
-              <h1>M 5+</h1>
+              <h1> &gt;5</h1>
             </Link>
           </div>
           <div className="mx-4">
-            <Link to="/about">
+            <Link to="/tentang">
               <h1 className="material-icons md-24 flex justify-center">info</h1>
               <h1>Tentang</h1>
             </Link>

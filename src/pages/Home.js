@@ -1,26 +1,22 @@
 import React, { useState, useEffect } from "react";
-
+import { getGempaTerkini } from "../data/api";
 import DetailInfo from "../components/Home/DetailInfo";
 import Magnitudo from "../components/Home/Magnitudo";
 import Header from "../components/Home/Header";
+import AppBar from "../components/AppBar";
 
 const Home = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch(`https://data.bmkg.go.id/DataMKG/TEWS/autogempa.json`)
-      .then((response) => response.json())
+    getGempaTerkini()
       .then((data) => setData(data.Infogempa.gempa))
       .catch((error) => console.log(error.response));
   }, []);
 
-  console.log(data);
-
   return (
     <div className="pb-20 text-center">
-      <header className="bg-blue-800 text-white text-center p-4 font-bold">
-        <h1>Gempa Terkini</h1>
-      </header>
+      <AppBar title="Gempa Terkini" />
 
       <main>
         {data ? (

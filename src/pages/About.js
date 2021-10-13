@@ -1,7 +1,10 @@
 import React from "react";
+import AppBar from "../components/AppBar";
+import Deskripsi from "../components/Tentang/Deskripsi";
+import Kontributor from "../components/Tentang/Kontributor";
 
 const About = () => {
-  const credits = [
+  const kontributor = [
     {
       nama: "Yogi Surya Pranata",
       sebagai: "Front End & Initiator",
@@ -24,33 +27,10 @@ const About = () => {
 
   return (
     <div>
-      <header className="bg-blue-800 text-white text-center p-4 font-bold">
-        <h1>About</h1>
-      </header>
+      <AppBar title="Tentang" />
       <main className="p-4">
-        <div className="shadow-lg p-4">
-          <p style={{ textAlign: "justify" }}>
-            Sebuah Web App yang menampilkan data gempa terbaru, prakiraan cuaca,
-            dan gempa yang dirasakan dalam 20 data menggunakan API dari data
-            terbuka BMKG. Jika ingin mengembangkan Web App ini silahkan klik{" "}
-            <a href="https://github.com/JenabB/react-bmkg">
-              <b style={{ fontSize: "18px", color: "teal" }}>Ini</b>
-            </a>
-          </p>
-        </div>
-        <div className="mt-8">
-          <h1 className="mb-4">Kontributor</h1>
-          {credits.map((credit, index) => (
-            <div key={index}>
-              <table>
-                <tr>
-                  <td>{credit.nama}</td>
-                  <td>{credit.sebagai}</td>
-                </tr>
-              </table>
-            </div>
-          ))}
-        </div>
+        <Deskripsi />
+        <Kontributor kontributor={kontributor} />
       </main>
     </div>
   );
