@@ -17,7 +17,7 @@ export default function Navigation() {
           <Route path="/about" component={About} />
         </Switch>
 
-        <div className="bg-blue-900 bottom-0 fixed flex lg:justify-center justify-evenly text-white w-full p-2">
+        <div className="bg-blue-900 rounded-t-3xl bottom-0 fixed flex lg:justify-center justify-evenly text-white w-full p-2">
           <div className="mx-4">
             <Link to="/" className="text-center">
               <h1 className="material-icons md-24 flex justify-center">home</h1>
