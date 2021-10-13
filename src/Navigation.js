@@ -44,7 +44,7 @@ export default function Navigation() {
           <div className="mx-4">
             <Link to="/about">
               <h1 className="material-icons md-24 flex justify-center">info</h1>
-              <h1>About</h1>
+              <h1>Tentang</h1>
             </Link>
           </div>
         </div>
